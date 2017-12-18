@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+int main(){
+char *str = " what do - you want from me ";
+char arr[10][10];
+int i, j, len, lenght = 0, cw = 0; 
+len = strlen(str);
+for (i = 0; i <= len; i++){
+if ((str[i] != 44)||(str[i] != 32)||(str[i] != 46)||(str[i] != 33)
+||(str[i] != 34)||(str[i] != 40)||(str[i] != 41)||(str[i] != 42)||(str[i] == 43)
+||(str[i] != 45)||(str[i] != 58)||(str[i] != 59)||(str[i] != 60)||(str[i] == 61)
+||(str[i] != 62)||(str[i] != 63)||(str[i] != 64)||(str[i] != 47)||(str[i] == 94)){
+
+arr[cw][lenght] = str[i];
+lenght++;
+}
+if (str[i] == 32){
+cw++;
+}
+} 
+
+printf( "Вот такой массив у нас получился:\n" );
+for ( i = 0; i < 10; i++ ) {
+for ( j = 0; j < 10; j++ )
+{
+if (((arr[i][j] >=65)&& (arr[i][j] <= 90))||((arr[i][j]>= 97)&&(arr[i][j]<= 122))){
+printf( "%c ", arr[i][j] );}
+}
+printf( "\n" );
+}
+getchar();
+}
